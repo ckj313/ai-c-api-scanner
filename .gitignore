@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+
+# Local third-party fixtures and generated reports are reproducible.
+fixtures/
+output/

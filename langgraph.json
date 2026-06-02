@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "c_api_scanner": "./c_api_scanner/workflow.py:graph"
+  },
+  "env": ".env"
+}

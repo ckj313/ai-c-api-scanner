@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "c-api-scanner"
+version = "0.1.0"
+description = "Directory-skill based AI scanner for extracting C web API endpoints."
+requires-python = ">=3.11"
+dependencies = [
+  "langgraph>=1.0.0",
+  "deepagents>=0.2.0",
+  "langsmith>=0.4.0",
+]
+
+[project.optional-dependencies]
+dev = []
+
+[project.scripts]
+c-api-scanner = "c_api_scanner.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["c_api_scanner*"]
+
+[tool.setuptools.package-data]
+c_api_scanner = ["agent_skills/*/SKILL.md"]
