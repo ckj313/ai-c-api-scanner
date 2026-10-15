@@ -27,7 +27,7 @@ cp .env.example .env
 
 ## 扫描 webdis
 
-本仓库不提交第三方 fixture。第一次测试 webdis 前先克隆样例：
+扫描真实 Webdis 仓库时，可以自行克隆第三方代码：
 
 ```bash
 mkdir -p fixtures
@@ -36,6 +36,14 @@ git clone https://github.com/nicolasff/webdis.git fixtures/webdis
 
 ```bash
 python3 -m c_api_scanner fixtures/webdis --output output/webdis-api-report.json
+```
+
+## 离线回归测试
+
+回归测试使用 `tests/fixtures/offline_project` 中提交的小型 C 样本，不依赖外部 Webdis 仓库、模型 API 或网络。测试覆盖目录级 Skill 选择、HTTP/WebSocket 提取、通用 C 路由和误匹配过滤，以及 CLI JSON 报告生成。
+
+```bash
+python3 -m unittest discover -s tests -v
 ```
 
 输出报告包含 `source_file`、`line`、`methods`、`path`、`handler`、`confidence`、`evidence`、`skill` 和 `directory`。
