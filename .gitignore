@@ -5,5 +5,5 @@ __pycache__/
 .env
 
 # Local third-party fixtures and generated reports are reproducible.
-fixtures/
-output/
+/fixtures/
+/output/
